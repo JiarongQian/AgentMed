@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>AgentMed: Evaluating GPT-5-Based AI Agents in Medicine</title>
+  <link rel="icon" type="image/x-icon" href="static/images/logo.">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body style="padding-top: 64px;">
+
+  <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation" style="border-bottom: 1px solid #e0e0e0;">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#overview" style="font-weight: 600;">
+          AgentMed
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="top-navigation">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="top-navigation" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#overview">Overview</a>
+          <a class="navbar-item" href="#introduction">Introduction</a>
+          <a class="navbar-item" href="#dataset">Dataset</a>
+          <a class="navbar-item" href="#leaderboard">Leaderboard</a>
+          <a class="navbar-item" href="#judge-criteria">Judge Criteria</a>
+          <a class="navbar-item" href="#examples">Examples</a>
+          <a class="navbar-item" href="#model-information">Model Information</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <div style="position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 48px;">
+              <img src="static\images\AgentMed_logo.png" alt="MedABench Logo"
+                   style="width: 450px; height: auto; vertical-align: middle;">
+              <img src="static\images\LOGO.png" alt="Project Logo"
+                   style="position: absolute; left: calc(50% - 350px); width: 180px; height: auto; vertical-align: middle;">
+            </div>
+            <h2 class="title is-3 is-normal publication-title" style="font-weight: normal;">Evaluating GPT-5-Based AI Agents in Medicine</h2>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              
+              <span class="author-block">Shaohui Zhang,</span>
+              <span class="author-block">Jiarong Qian,</span>
+              <span class="author-block">Kai Zhang,</span>
+              <span class="author-block">Zhiling Yan,</span>
+
+
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Lehigh University, University of Pennsylvania
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/JiarongQian/AgentMed" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                  </a>
+                </span> -->
+                <!-- Leaderboard link -->
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser" id="overview">
+    <div class="container is-max-desktop">
+      <div class="hero-body has-text-centered">
+        <h2 class="title is-3">
+          <img src="./static/images/overview icon.png" alt="Overview icon"
+            style="width: 60px; height: auto; vertical-align: middle; margin-right: 10px; display: inline-block;">
+          <span style="vertical-align: middle;">Overview</span>
+        </h2>
+        <img src="./static/images/main picture.png"
+          alt="Overview"
+          style="margin-top: 16px;">
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper Introduction -->
+  <section class="section " id="introduction">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-10">
+          <h2 class="title is-3">
+            <img src="./static/images/nurse (1).png" alt=""
+              style="width: 60px; height: auto; vertical-align: middle; margin-right: 10px; display: inline-block;">
+            <span style="vertical-align: middle;">Introduction</span>
+            <img src="./static/images/nurse.png" alt=""
+              style="width: 60px; height: auto; vertical-align: middle; margin-left: 10px; display: inline-block;">
+          </h2>
+          <div class="content has-text-justified">
+            <p>
+              Clinical diagnosis is inherently multimodal. Clinicians integrate imaging (e.g., radiology, pathology), physiologic signals and laboratory values with patient history and examination to reach an open-ended conclusion. Early deployments of large-scale foundation models in medicine were largely text-only, useful for evidence summarization, retrieval, and exam-style QA, but limited in supporting the step-wise, uncertainty-aware reasoning required by diagnostic practice. As reasoning-oriented models emerged, they began to externalize intermediate thinking (e.g., iterative deliberation or tool-augmented reasoning). The field has since progressed toward multimodal systems that jointly process images and text, and toward agentic configurations that can plan multi-step procedures, call tools, retrieve evidence, and self-check.
+            </p>
+            <p>
+              Within this trajectory, GPT-5 exposes multiple modes beyond a single backbone, including Auto routing, compact and high-capacity reasoning variants (Thinking mini, Thinking, Pro), retrieval-augmented settings (Web Search), and agentic configurations (Agent, Deep Research). This diversity raises a central question for medicine: how do different modes, reasoning depth, retrieval, and agent behavior shape performance and reasoning quality when the task is multimodal diagnosis rather than generic visual question answering.
+            </p>
+            <p>
+              Benchmarks have evolved alongside models, from multiple-choice exams to resources that incorporate images and, in some cases, structured context. However, prevailing protocols still emphasize short-answer or closed-ended formats and often depend on automatic graders whose agreement with clinicians is insufficiently established. As a result, current scores provide limited visibility into whether models or systems can synthesize images and patient context into a defensible, open-ended diagnosis.
+            </p>
+            <p>
+              To bridge these gaps, we study ten GPT-5 configurations (details in Methods) on 161 curated, clinically grounded cases across diverse body systems, each requiring multimodal evidence integration. We introduce an open-ended judging criteria and scoring protocol that maps model outputs to reference diagnoses (allowing synonyms, subtypes, and near matches). Evaluation comprises both expert adjudication (human judging) and a scalable machine-judging procedure for large-scale consistency checks. Based on human evaluation, we analyze the effects of retrieval, body-system variation, multimodal input quality, and agentic planning on diagnostic accuracy and reasoning quality.
+            </p>
+            <p>
+              Our results indicate that reasoning models achieve the strongest human-adjudicated accuracies yet fall short of clinical adequacy. Pro reaches 0.4596, and its web-augmented counterpart increases only marginally to 0.4658 (&Delta;&nbsp;&approx;&nbsp;+0.0062), whereas adding web search to the Auto router reduces accuracy by 0.1179 (p&nbsp;&lt;&nbsp;0.001). Retrieval also rarely overturns an incorrect base prediction: when the base model is wrong, the corresponding web configuration is correct in only 10.1&ndash;19.1% of cases.
+            </p>
+            <p>
+              Error profiling indicates that evidence integration is the principal bottleneck: &ldquo;Evidence-chain&rdquo; failures (missing, inconsistent, or circular reasoning steps) dominate, and misinterpretation of visual findings accounts for up to &sim;60% of reasoning failures in several models. Notably, agentic configurations that interleave planning, tool use, and retrieval do not confer a diagnostic advantage; in our benchmark they underperformed model-only baselines and obscured their reasoning traces, underscoring the need for transparent and robust evidence integration in multimodal diagnosis.
+            </p>
+            <p>
+              To scale assessment without sacrificing rigor, a rubric-aligned GPT-5 machine judge is &sim;5&ndash;10% stricter than clinicians yet attains substantial overall concordance (mean Cohen&rsquo;s &kappa;&nbsp;&approx;&nbsp;0.63), supporting its use as a scalable proxy when paired with expert review. Taken together, these data indicate that <em>mode choice</em>, particularly deeper reasoning and disciplined retrieval, governs reliability in open-ended multimodal diagnosis, whereas long agentic traces without robust evidence integration can degrade performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <!-- dataset -->
+  <section class="hero is-light" id="dataset">
+    <div class="container">
+      <div class="has-text-centered" style="padding: 20px 0;">
+        <h2 class="title is-1">
+          <img src="./static/images/data.png" alt=""
+            style="width: 70px; height: auto; vertical-align: middle; margin-right: 10px; display: inline-block;">
+          <span style="vertical-align: middle;">Diagnosis Dataset</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container">
+        <!-- dataset overview -->
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <div class="content has-text-justified">
+              <p>
+                <strong>Dataset Overview.</strong> Our benchmark is built from MedXpertQA, focusing on its diagnosis subset of multimodal clinical cases. Each case includes patient history, symptoms, examination findings, one or more medical images, and a verified diagnostic label.
+              </p>
+              <p>
+                <strong>Selection &amp; Processing.</strong> We retained only cases requiring a single, clinically actionable diagnosis, excluding items on prognosis, mechanisms, or multi-answer scenarios. Multiple-choice questions were standardized into open-ended form. All items were reviewed by a medical expert to ensure diagnostic relevance and accuracy.
+              </p>
+              <p>
+                <strong>Composition.</strong> The final dataset contains 161 cases across five body systems&nbsp;&mdash; cardiovascular (40), digestive (34), respiratory (34), skeletal (31), and nervous (22). Each includes a patient narrative, multimodal imagery (CT, MRI, X-ray, PET, pathology, EEG/ECG, etc.), and a validated ground truth diagnosis.
+              </p>
+            </div>
+            
+            <!-- Dataset images carousel -->
+            <div class="has-text-centered" style="margin: 30px 0;">
+              <div id="dataset-carousel" class="carousel results-carousel">
+                <div class="item">
+                  <img src="./static/images/Digestive.png" alt="Digestive case example" />
+                  <h2 class="subtitle has-text-centered">Digestive</h2>
+                </div>
+                <div class="item">
+                  <img src="./static/images/Nervous.png" alt="Nervous system case example" />
+                  <h2 class="subtitle has-text-centered">Nervous</h2>
+                </div>
+                <div class="item">
+                  <img src="./static/images/Respiratory.png" alt="Respiratory case example" />
+                  <h2 class="subtitle has-text-centered">Respiratory</h2>
+                </div>
+                <div class="item">
+                  <img src="./static/images/Skeletal.png" alt="Skeletal case example" />
+                  <h2 class="subtitle has-text-centered">Skeletal</h2>
+                </div>
+                <div class="item">
+                  <img src="./static/images/Cardiovascular.png" alt="Cardiovascular case example" />
+                  <h2 class="subtitle has-text-centered">Cardiovascular</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- End image carousel -->
+  <!-- End dataset -->
+
+  <!-- Leaderboard -->
+  <section class="hero is-light" id="leaderboard">
+    <div class="container">
+      <div class="has-text-centered" style="padding: 20px 0;">
+        <h2 class="title is-1">
+          <img src="./static/images/leaderboard.png" alt=""
+            style="width: 70px; height: auto; vertical-align: middle; margin-right: 10px; display: inline-block;">
+          <span style="vertical-align: middle;" id="Leaderboard">Leaderboard</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <div class="table-container">
+            <div class="table-title">
+              Performance of Family Models and Agent Systems on the 161-case Diagnosis (Accuracy)
+            </div>
+            <table id="leaderboard-table" class="table is-bordered is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Model</th>
+                  <th>Accuracy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- LLM Group -->
+                <tr class="group-1">
+                  <td rowspan="4" class="has-text-weight-bold" style="text-align: center; vertical-align: middle;">LLM</td>
+                  <td class="model-1">Auto</td>
+                  <td class="data-cell">0.3850</td>
+                </tr>
+                <tr>
+                  <td class="model-1">Thinking mini</td>
+                  <td class="data-cell">0.3292</td>
+                </tr>
+                <tr>
+                  <td class="model-1">Thinking</td>
+                  <td class="data-cell">0.4161</td>
+                </tr>
+                <tr>
+                  <td class="model-1"><strong>Pro</strong></td>
+                  <td class="data-cell"><strong>0.4596</strong></td>
+                </tr>
+                
+                <!-- Web-Search Group -->
+                <tr class="group-2">
+                  <td rowspan="4" class="has-text-weight-bold" style="text-align: center; vertical-align: middle;">Web-Search</td>
+                  <td class="model-2">Auto Web Search</td>
+                  <td class="data-cell">0.2671</td>
+                </tr>
+                <tr>
+                  <td class="model-2">Thinking mini Web Search</td>
+                  <td class="data-cell">0.3478</td>
+                </tr>
+                <tr>
+                  <td class="model-2">Thinking Web Search</td>
+                  <td class="data-cell">0.4410</td>
+                </tr>
+                <tr>
+                  <td class="model-2"><strong>Pro Web Search</strong></td>
+                  <td class="data-cell"><strong>0.4658</strong></td>
+                </tr>
+                
+                <!-- Agent Group -->
+                <tr class="group-3">
+                  <td rowspan="2" class="has-text-weight-bold" style="text-align: center; vertical-align: middle;">Agent</td>
+                  <td class="model-3">ChatGPT Agent</td>
+                  <td class="data-cell">0.3664</td>
+                </tr>
+                <tr>
+                  <td class="model-3">Deep Research</td>
+                  <td class="data-cell">0.2981</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- <p class="has-text-centered is-size-7 mt-2">表格显示了不同模型在MMMR数据集上的表现（准确率%）。粗体数字表示各列的最佳结果。带*的模型使用了专门设计的提示。</p> -->
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- End Leaderboard -->
+
+  <!-- Physician Judge Criteria -->
+  <section class="hero is-light" id="judge-criteria">
+    <div class="container">
+      <div class="has-text-centered" style="padding: 20px 0;">
+        <h2 class="title is-1">
+          <img src="./static/images/judge criteria.png" alt="Physician judge criteria icon"
+            style="width: 70px; height: auto; vertical-align: middle; margin-right: 10px; display: inline-block;">
+          <span style="vertical-align: middle;" id="PhysicianJudge">Physician Judge Criteria</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+          <div class="table-container">
+        <table class="table is-bordered is-fullwidth judge-criteria-table">
+              <thead>
+                <tr>
+              <th rowspan="2" style="vertical-align: middle;">Criteria</th>
+              <th colspan="2" class="has-text-centered">Matches clinical evidence</th>
+              <th colspan="2" class="has-text-centered">Clinical reasoning tolerance</th>
+              <th colspan="2" class="has-text-centered">Correct site / polarity</th>
+              <th colspan="2" class="has-text-centered">On topic (no hallucination)</th>
+              <th colspan="2" class="has-text-centered">Diagnostic granularity tolerance</th>
+              <th colspan="2" class="has-text-centered">Minor / format difference</th>
+            </tr>
+            <tr>
+              <th>GT</th>
+              <th>GPT</th>
+              <th>GT</th>
+              <th>GPT</th>
+              <th>GT</th>
+              <th>GPT</th>
+              <th>GT</th>
+              <th>GPT</th>
+              <th>GT</th>
+              <th>GPT</th>
+              <th>GT</th>
+              <th>GPT</th>
+                </tr>
+              </thead>
+              <tbody>
+            <tr>
+              <td class="has-text-weight-semibold">Both (1 = correct)</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+            </tr>
+            <tr>
+              <td class="has-text-weight-semibold">GT (0 = wrong)</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+                </tr>
+            <tr>
+              <td class="has-text-weight-semibold">GPT (1 = correct)</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#1a7f5b;">✓</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+                </tr>
+                <tr>
+              <td class="has-text-weight-semibold">Other (0 = wrong)</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#a94442;">✗</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+              <td style="color:#d08a00;">Δ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      <div class="content has-text-justified">
+        <p>Legend: <span style="color:#1a7f5b;">✓</span> = fully meets, <span style="color:#d08a00;">Δ</span> = partially meets, <span style="color:#a94442;">✗</span> = violates.</p>
+        <ul>
+          <li><strong>Matches clinical evidence:</strong> Diagnosis aligns with history, findings, and tests; directionally correct yet incomplete responses receive Δ, while those ignoring key evidence receive ✗.</li>
+          <li><strong>Clinical reasoning tolerance:</strong> Reasoning must remain medically sound and self-consistent; plausible but generic chains earn Δ, unsupported or contradictory logic earns ✗.</li>
+          <li><strong>Correct site / polarity:</strong> Requires accurate laterality, location, and presence/absence; slightly generalized but consistent answers get Δ, wrong side or polarity is ✗.</li>
+          <li><strong>On topic (no hallucination):</strong> Answers must address the case without fabricating details; minor additional context merits Δ, hallucinated or irrelevant content is ✗.</li>
+          <li><strong>Diagnostic granularity tolerance:</strong> Responses should match the appropriate parent/subtype level; slightly broader or narrower yet clinically interchangeable terms earn Δ, semantic mismatches earn ✗.</li>
+          <li><strong>Minor / format difference:</strong> Only trivial unit or wording differences qualify; small rounding or abbreviations receive Δ, changes in magnitude or meaning result in ✗.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examples -->
+  <section class="hero is-light" id="examples">
+    <div class="container">
+      <div class="has-text-centered" style="padding: 20px 0;">
+        <h2 class="title is-1">
+          <img src="./static/images/example-icon.png" alt="Examples Icon"
+            style="width: 70px; height: auto; vertical-align: middle; margin-right: 10px; display: inline-block;">
+          <span style="vertical-align: middle;" id="Examples">Examples</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies: Strengths of LLMs -->
+  <section class="section">
+    <div class="container">
+      <h3 class="title is-3 has-text-centered">Case studies on the strengths of LLMs</h3>
+      <div id="llm-strengths-carousel" class="carousel results-carousel results-carousel2">
+        <div class="item">
+          <img src="static/images/model_strenth_1.png" alt="Case study showing LLM strength example 1" />
+        </div>
+        <div class="item">
+          <img src="static/images/model_strength_2.png" alt="Case study showing LLM strength example 2" />
+        </div>
+        <div class="item">
+          <img src="static/images/model_strength_3.png" alt="Case study showing LLM strength example 3" />
+        </div>
+        <div class="item">
+          <img src="static/images/model_strength_4.png" alt="Case study showing LLM strength example 4" />
+        </div>
+      </div>
+            </div>
+  </section>
+
+  <!-- Case Studies: Limitations of LLMs -->
+  <section class="section">
+    <div class="container">
+      <h3 class="title is-3 has-text-centered">Misclassification and partial-credit cases</h3>
+      <div id="llm-limitations-carousel" class="carousel results-carousel results-carousel2">
+        <div class="item">
+          <img src="static/images/limitation-1.png" alt="Case study showing LLM limitation example 1" />
+        </div>
+        <div class="item">
+          <img src="static/images/limitation-2.png" alt="Case study showing LLM limitation example 2" />
+          </div>
+        <div class="item">
+          <img src="static/images/limitation-3.png" alt="Case study showing LLM limitation example 3" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies: Limitations of Web Search -->
+  <section class="section">
+    <div class="container">
+      <h3 class="title is-3 has-text-centered">Case studies on the limitations of web search</h3>
+      <div id="web-search-limitations-carousel" class="carousel results-carousel results-carousel2">
+        <div class="item">
+          <img src="static/images/web_search_auto MM-1169.png" alt="Case study showing web search limitation for auto model" />
+        </div>
+        <div class="item">
+          <img src="static/images/web_search_thinkingmini MM-1154.png" alt="Case study showing web search limitation for thinking mini model" />
+        </div>
+        <div class="item">
+          <img src="static/images/web_search_thinking MM-1404.png" alt="Case study showing web search limitation for thinking model" />
+        </div>
+        <div class="item">
+          <img src="static/images/web_search_pro MM-1466.png" alt="Case study showing web search limitation for pro model" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies: Limitations of Agents -->
+  <section class="section">
+    <div class="container">
+      <h3 class="title is-3 has-text-centered">Case studies on the limitations of agents</h3>
+      <div id="agent-limitations-carousel" class="carousel results-carousel results-carousel2">
+        <div class="item">
+          <img src="static/images/MM-1154.png" alt="Case study showing agent limitation example MM-1154" />
+        </div>
+          <div class="item">
+          <img src="static/images/MM-1169.png" alt="Case study showing agent limitation example MM-1169" />
+          </div>
+          <div class="item">
+          <img src="static/images/MM-1404.png" alt="Case study showing agent limitation example MM-1404" />
+        </div>
+        <div class="item">
+          <img src="static/images/MM-1466.png" alt="Case study showing agent limitation example MM-1466" />
+        </div>
+          </div>
+        </div>
+  </section>
+
+  <!-- Model Versions and Test Dates -->
+  <section class="hero is-light" id="model-information">
+    <div class="container">
+      <div class="has-text-centered" style="padding: 20px 0;">
+        <h2 class="title is-1">
+          <img src="./static/images/chatgpt.png" alt="Model schedule icon"
+            style="width: 70px; height: auto; vertical-align: middle; margin-right: 10px; display: inline-block;">
+          <span style="vertical-align: middle;" id="ModelSchedule">Model Information</span>
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="table-container model-schedule-table">
+        <h3 class="title is-4 has-text-centered" style="color: #000000; margin-bottom: 24px;">ChatGPT-5 Model Version and Test Dates (August 2025)</h3>
+        <table class="table is-bordered is-fullwidth">
+          <thead>
+            <tr>
+              <th colspan="6" class="has-text-centered" style="background-color: #f2f2f2; color: #000000;">LLM Model Versions</th>
+            </tr>
+            <tr>
+              <th>Model Version</th>
+              <th>Auto (GPT-5)</th>
+              <th>Thinking mini</th>
+              <th>Thinking</th>
+              <th>Pro</th>
+              <th>Auto Web Search</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="has-text-weight-semibold">Test Date (mm.dd.2025)</td>
+              <td>08.09</td>
+              <td>08.30</td>
+              <td>08.09&ndash;08.10</td>
+              <td>08.09</td>
+              <td>08.11</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table is-bordered is-fullwidth" style="margin-top: 24px;">
+          <thead>
+            <tr>
+              <th colspan="6" class="has-text-centered" style="background-color: #f2f2f2; color: #000000;">Web Search and Agent Model Versions</th>
+            </tr>
+            <tr>
+              <th>Model Version</th>
+              <th>Thinking mini Web Search</th>
+              <th>Thinking Web Search</th>
+              <th>Pro Web Search</th>
+              <th>Deep Research</th>
+              <th>Agent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="has-text-weight-semibold">Test Date (mm.dd.2025)</td>
+              <td>08.16</td>
+              <td>08.11</td>
+              <td>08.10</td>
+              <td>08.14&ndash;08.20</td>
+              <td>08.11&ndash;08.13</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="has-text-grey is-size-7" style="margin-top: 12px;"><strong>Note:</strong> ChatAuto is called ChatGPT-5 as of 08.09.2025.</p>
+      </div>
+    </div>
+  </section>
+
+  <!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{2025—Evaluation,
+  title={Evaluating GPT-5-Based AI Agents in Medicine},
+  author={Shaohui Zhang，Jiarong Qian，Kai Zhang，Zhiling Yan},
+  booktitle={},
+  year={2025},
+}
+      </code></pre>
+    </div>
+  </section>
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
