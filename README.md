@@ -1,5 +1,6 @@
 # The Complexity Paradox of Generalist AI Agents in Medicine: Exploring GPT-5 for Real-World Multimodal Diagnosis 
 
+[![Page](https://img.shields.io/badge/🌐-Project%20Page-blue)](https://jiarongqian.github.io/Exploring-GPT-5-for-Real-World-Multimodal-Diagnosis/)
 
 ## Overview
 
