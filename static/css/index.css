@@ -1,0 +1,447 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+    color: #555;
+    width: fit-content;
+    font-weight: bold;
+}
+
+.publication-awards {
+    color: #ff3860;
+    width: fit-content;
+    font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+  position: relative;
+  touch-action: pan-y;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  padding: 20px;
+  font-size: 0;
+  text-align: center;
+  user-select: none;
+}
+
+.results-carousel .item img {
+  max-height: 400px;
+  width: auto;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+/* Carousel navigation buttons */
+.slider-navigation-previous,
+.slider-navigation-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.slider-navigation-previous:hover,
+.slider-navigation-next:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slider-navigation-previous {
+  left: 10px;
+}
+
+.slider-navigation-next {
+  right: 10px;
+}
+/* 表格圆角和左右边框透明，且单元格边框不变宽 */
+.table-container {
+  border-radius: 16px;
+  overflow: hidden;
+  border: none;
+  background: none;
+  margin-top: 32px;
+}
+
+.table-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0px 0 10px 0;
+  background: transparent;
+  border: none;
+}
+
+.table {
+  border-radius: 16px;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  border: 1px solid #dbdbdb;
+}
+
+.table th:first-child, .table td:first-child {
+  border-left: 2px solid transparent !important;
+}
+
+.table th:last-child, .table td:last-child {
+  border-right: 2px solid transparent !important;
+}
+
+/* 四角圆角 */
+.table th:first-child {
+  border-top-left-radius: 16px;
+}
+.table th:last-child {
+  border-top-right-radius: 16px;
+}
+.table tr:last-child td:first-child {
+  border-bottom-left-radius: 16px;
+}
+.table tr:last-child td:last-child {
+  border-bottom-right-radius: 16px;
+}
+
+.results-carousel2 .item img {
+  max-height: 520px !important;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.slider-pagination .slider-page {
+  background: #000000;
+}
+
+.eql-cntrb { 
+  font-size: smaller;
+}
+
+/* 数据单元格和进度条样式 */
+.data-cell {
+  background-color: #ffffff;
+  text-align: center;
+  position: relative;
+  padding: 12px 15px;
+}
+
+.progress-bar-1, .progress-bar-2, .progress-bar-3 {
+  position: absolute;
+  left: 15px;
+  top: 6px;
+  bottom: 6px;
+  border-radius: 6px;
+  opacity: 0.7;
+  z-index: 0;
+}
+
+/* Baselines进度条 */
+.progress-bar-1 {
+  background-color: #b3e0e4 ;
+}
+
+/* Models without thinking进度条 */
+.progress-bar-2 {
+  background-color: #a8d5bd;
+}
+
+/* Models with thinking进度条 */
+.progress-bar-3 {
+  background-color: #ffeac2;
+}
+
+/* 数据值样式 */
+.cell-value {
+  position: relative; 
+  z-index: 1;
+}
+
+/* 粗体高亮数据 */
+.bold-value {
+  font-weight: bold;
+}
+
+/* 表格全局样式 */
+.table {
+  width: 100% !important;
+  table-layout: fixed; /* 确保列宽度一致 */
+}
+
+
+.table th,
+.table td {
+  text-align: center !important;
+  vertical-align: middle !important;
+  width: calc(100% / 9) !important; /* 默认9列 */
+  word-wrap: break-word; /* 长文本自动换行 */
+}
+
+/* Leaderboard 专用列宽（4列） */
+#leaderboard-table th,
+#leaderboard-table td {
+  width: calc(100% / 4) !important; /* 四列 */
+}
+
+#leaderboard-table th:first-child,
+#leaderboard-table td:first-child {
+  width: 20% !important; /* Category列 */
+}
+
+#leaderboard-table th:nth-child(2),
+#leaderboard-table td:nth-child(2) {
+  width: 35% !important; /* Model列更宽 */
+}
+
+#leaderboard-table th:nth-child(3),
+#leaderboard-table td:nth-child(3),
+#leaderboard-table th:nth-child(4),
+#leaderboard-table td:nth-child(4) {
+  width: 22.5% !important; /* Result和Accuracy列 */
+}
+
+/* 强制所有单元格内容居中 */
+table.table th, 
+table.table td,
+table.table tr > th,
+table.table tr > td {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+/* 表头样式 */
+.table thead tr {
+  background-color: #b7cddc;
+}
+
+.table thead th {
+  text-align: center !important;
+  vertical-align: middle !important;
+  padding: 12px 15px;
+  color: #ffffff !important;
+}
+
+/* 表格行悬停效果 - 最简化版本 */
+.table tbody tr:not(.group-1):not(.group-2):not(.group-3) {
+  transition: background-color 0.3s;
+}
+
+.table tbody tr:not(.group-1):not(.group-2):not(.group-3):hover {
+  background-color: #f0f0f0 !important;
+}
+
+/* 重置背景色 */
+.table tbody tr:not(.group-1):not(.group-2):not(.group-3):hover td,
+.table tbody tr:not(.group-1):not(.group-2):not(.group-3):hover td.model-1,
+.table tbody tr:not(.group-1):not(.group-2):not(.group-3):hover td.model-2,
+.table tbody tr:not(.group-1):not(.group-2):not(.group-3):hover td.model-3,
+.table tbody tr:not(.group-1):not(.group-2):not(.group-3):hover td.data-cell {
+  background-color: transparent !important;
+}
+
+/* Baselines 组模型名称样式 */
+.model-1 {
+  background-color: #e9fdff;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Models without thinking 组模型名称样式 */
+.model-2 {
+  background-color: #e8f4eb;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Models with thinking 组模型名称样式 */
+.model-3 {
+  background-color: #fcfaee;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* Baselines 组样式 */
+.group-1 {
+  background-color: #e9fdff;
+}
+
+/* Models without thinking 组样式 */
+.group-2 {
+  background-color: #e8f4eb;
+}
+
+/* Models with thinking 组样式 */
+.group-3 {
+  background-color: #fcfaee;
+}
+
+.model-schedule-table thead th {
+  color: #000000 !important;
+}
+
+.judge-criteria-table thead th {
+  color: #000000 !important;
+}
+
+/* Tab styles for Examples section */
+.tab-content {
+  min-height: 400px;
+}
+
+.tab-item {
+  cursor: pointer;
+}
+
+.tab-item a {
+  color: #363636;
+  font-weight: 500;
+}
+
+.tab-item.is-active a {
+  color: #3273dc;
+  font-weight: 600;
+}
+
+/* Tab wrapper for two rows */
+.tabs-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabs-wrapper .tabs {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.tabs-wrapper .tabs ul {
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.tabs-wrapper .tabs li {
+  flex: 1 1 auto;
+  min-width: 200px;
+  max-width: 400px;
+}
+
+
+
+
+
